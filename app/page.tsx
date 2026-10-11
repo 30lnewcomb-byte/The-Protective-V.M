@@ -10,7 +10,7 @@ export default function Home() {
   ]);
   function addTestTraffic() {
     const now = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-    setLogs(previous => [{ time: now, title: "Synthetic traffic test", detail: "Example request to an unapproved destination — marked blocked in this UI simulation only.", kind: "blocked" }, ...previous].slice(0, 8));
+    setLogs(previous => [{ time: now, title: "Synthetic traffic test", detail: "Example request to an unapproved destination — marked blocked in this UI simulation only.", kind: "blocked" as const }, ...previous].slice(0, 8));
     setPreviewMode(true);
   }
   function resetPreview() {
